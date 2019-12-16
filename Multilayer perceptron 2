@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Dec 16 16:28:46 2019
+
+@author: pc
+"""
+
+# Import dependencies
+import numpy as np 
+
+# Create activation function and derivative
+
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+def sigmoid_prime(x):
+    return x*(1-x)
+
+# Create input data
+    
+x = np.array([[0, 0, 1], 
+              [0, 1, 1],
+              [1, 0, 1],
+              [1, 1, 1]]) 
+    
+# Create output data 
+    
+y = np.array([[0], 
+             [1], 
+             [1],
+             [0]])
+    
+# Create random seed
+
+np.random.seed(1)
+
+# Create weight matrices
+
+wi = np.random.random((len(x[0]), len(x))) # Weights from input to hidden layer
+wh = np.random.random((len(x), 1))  # Weights from hidden to output layer 
+
+# Create bias array
+
+bi = np.random.random((len(x)))  # Biases from input to hidden layer
+bh = np.random.random()  # Biases from hidden to output layer 
+
+# Create nodes
+
+n0 = wi + bi
+n1 = wh + bh
+
+# Training
+
+for j in range(10000): # No of training steps
+    # create layers
+    l0 = x
+    l1 = sigmoid(np.dot(l0, n0))
+    l2 = sigmoid(np.dot(l1, n1))
+    
+    # backpropagate
+    l2_error = y - l2
+    l2_delta = l2_error * sigmoid_prime(l2)
+    l1_error = l2_delta.dot(n1.T)
+    l1_delta = l1_error * sigmoid_prime(l1)
+    
+    # update nodes
+    n1 += l1.T.dot(l2_delta)
+    n0 += l0.T.dot(l1_delta)
+    
+print('Output after training:')
+print(l2)
