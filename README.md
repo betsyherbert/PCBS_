@@ -1,4 +1,9 @@
-# PCBS_NeuralNetworks
+# PCBS Project: Multilayer Perceptron
+
+For this PCBS project, I wanted to explore the architecture of a simple multilayer perceptron. I am fascinated with the field of neural networks both in its current and previous incarnations, and have wanted for a long time to explore more deeply their background and theory. Since I am an extreme beginner in programming, I limited myself just to studying the simplest, foundational neural network architectures possible: the perceptron, and subsequently a multilayer perceptron with one hidden layer. These form the fundamental building blocks of all current-day neural-network based models, and so I spent a long time working "from the ground up" and really trying get to grips with the computations involved. This project is a result of that. It is an attempt to describe in my own words, via examples, the fundamental theory behind perceptrons and MLPs, and subsequently code from scratch a simple MLP architecture in Python capable of solving a 'canonical' example of a non-linearly separable problem, the XOR problem.
+
+The write-up occurs in _ stages. First, I introduce the __XOR problem,__ and explain why it is non-linearly separable. I then detail the nature of __perceptrons__ and form an intuition as to why they are only capable of forming linear decision boundaries. Then, I introduce __multilayer perceptrons,__ and explore how it is that they can overcome this limitation. I then formalise in some detail the two major computational stages of MLPs,__forward propagation__ and __backpropagation__. Finally, I translate this theoretical background into a simple Python script implementing an __MLP architecture__ with one hidden layer, trained on the inputs and outputs of the XOR problem. After enough training iterations, we see that it can succesfuly classify the inputs into the correct outputs.
+
 
 The aim of this project will be to code a variety of neural network algorithms and architectures from scratch - instead of using a predefined library - in order to gain a comprehensive understanding of what is happening 'under the hood'.
 
