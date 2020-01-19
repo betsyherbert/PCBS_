@@ -1,4 +1,4 @@
-# PCBS Project: Multilayer Perceptron
+# PCBS Project: Single and Multilayer Perceptrons
 
 For this project, I wanted to explore the architecture of simple perceptrons, both single and multi-layer. I am fascinated with the field of neural networks both in its current and previous incarnations, and have wanted for a long time to explore their background and theory in more detail. Since I am an extreme beginner in programming, I limited myself just to studying the simplest, foundational neural network architectures possible: the perceptron, and subsequently a multilayer perceptron with just one hidden layer. These form the fundamental building blocks of all current-day neural-network based models, and so I wanted to spend a long time working "from the ground up" and really trying get to grips with the computations involved. This project is a result of that. It is an attempt to describe in my own words, via examples, the fundamental theory behind perceptrons and MLPs, and subsequently code from scratch both a simple perceptron and MLP architecture in Python.
 
